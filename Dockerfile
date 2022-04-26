@@ -1,7 +1,7 @@
 FROM maven as build
 WORKDIR /usr/app
 COPY pom.xml /usr/app/pom.xml
-RUN mvn dependency:go-offline -8
+RUN mvn dependency:go-offline -B
 COPY src /usr/app/src
 RUN mvn package -DskipTests
 
