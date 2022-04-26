@@ -6,6 +6,6 @@ COPY src /usr/app/src
 RUN mvn package -DskipTests
 
 FROM openjdk:alpine
-COPY --from=build /usr/app/target/metadata-service.jar
+COPY --from=build /usr/app/target/metadata-service.jar .
 EXPOSE 8080
 ENTRYPOINT java -jar metadata-service.jar
